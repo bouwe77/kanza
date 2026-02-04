@@ -1,5 +1,7 @@
 # Kanza
 
+**A lightweight, customizable terminal emulator component for React.**
+
 ## Kanza?
 
 > _"Kanza, at the time of the ripening"_
@@ -14,3 +16,18 @@ In the fictional Tamarian language, the word _"Kanza"_ refers to the moment a pr
 npm i kanza
 ```
 
+## Usage
+
+Import the `Kanza` component into your React application:
+
+```ts
+import { Kanza } from 'kanza'
+
+function App() {
+  return (
+    <div className="app-container">
+      <Kanza />
+    </div>
+  )
+}
+```
