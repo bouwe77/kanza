@@ -1,6 +1,6 @@
 {
   "name": "kanza",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A React library - coming soon",
   "type": "module",
   "main": "./dist/kanza.js",
