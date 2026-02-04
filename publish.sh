@@ -20,7 +20,7 @@ echo "Version bump: $1"
 
 # Bump the version
 echo "Running npm version $1..."
-npm version "$1"
+npm version "$1" || { echo "Error: npm version failed. Make sure your git working directory is clean."; exit 1; }
 
 # Build the library
 echo "Building the library..."
