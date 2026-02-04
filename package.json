@@ -1,0 +1,44 @@
+{
+  "name": "kanza",
+  "version": "0.0.4",
+  "description": "A React library - coming soon",
+  "type": "module",
+  "main": "./dist/kanza.js",
+  "module": "./dist/kanza.js",
+  "types": "./dist/kanza.d.ts",
+  "exports": {
+    ".": "./dist/kanza.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "react": ">=16",
+    "react-dom": ">=16"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.11",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "typescript": "^5.9.3",
+    "vite": "^6.0.5",
+    "vite-plugin-dts": "^4.5.4"
+  },
+  "keywords": [
+    "react",
+    "library"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bouwe77/kanza.git"
+  }
+}
