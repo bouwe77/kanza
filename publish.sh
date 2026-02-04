@@ -1,37 +1,33 @@
 #!/bin/bash
+set -e # Exit immediately if a command exits with a non-zero status
 
-# publish.sh - Script to version and publish the kanza library to NPM
-
-# Check if an argument was provided
+# Check argument
 if [ -z "$1" ]; then
   echo "Error: Please provide a version bump type: major, minor, or patch"
-  echo "Usage: ./publish.sh [major|minor|patch]"
   exit 1
 fi
 
-# Validate the argument
-if [[ ! "$1" =~ ^(major|minor|patch)$ ]]; then
-  echo "Error: Invalid version bump type. Use: major, minor, or patch"
-  exit 1
-fi
+echo "🚀 Starting publish process..."
 
-echo "Starting publish process..."
-echo "Version bump: $1"
+# 1. Clean install to ensure build tools (vite) are ready
+# (Optional, but fixes your specific 'vite not found' error)
+echo "📦 Installing dependencies..."
+npm install
 
-# Bump the version
-echo "Running npm version $1..."
-npm version "$1" || { echo "Error: npm version failed. Make sure your git working directory is clean."; exit 1; }
+# 2. Bump version
+echo "🔖 Bumping version ($1)..."
+npm version "$1"
 
-# Build the library
-echo "Building the library..."
+# 3. Build
+echo "🛠 Building..."
 npm run build
 
-# Publish to NPM
-echo "Publishing to NPM..."
+# 4. Publish
+echo "🚀 Publishing to NPM..."
 npm publish --access public
 
-# Push tags to git
-echo "Pushing tags to git..."
+# 5. Push tags (Only happens if publish succeeds)
+echo "pusher git tags..."
 git push --follow-tags
 
-echo "✓ Publish complete!"
+echo "✅ Kanza published successfully!"
